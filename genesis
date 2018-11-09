@@ -1,0 +1,12 @@
+#! /bin/sh
+
+echo "Registering workflow with Kubernetes cluster" 
+sleep 1
+echo "[INFO] Connecting to Kubernetes client ..." 
+sleep 1
+echo "[INFO] Registering resource 'AppStack' as custom resource definition" 
+kubectl apply -f ./crd/appstack.yaml
+sleep 1
+echo "[INFO] Completed!"
+echo ""
+
