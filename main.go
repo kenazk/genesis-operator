@@ -17,7 +17,7 @@ import (
 )
 
 // retrieve the Kubernetes cluster client from outside of the cluster
-func getKubernetesClient() (kubernetes.Interface, myresourceclientset.Interface) {
+func getKubernetesClient() (kubernetes.Interface, appstackclientset.Interface) {
 	// construct the path to resolve to `~/.kube/config`
 	kubeConfigPath := os.Getenv("HOME") + "/.kube/config"
 

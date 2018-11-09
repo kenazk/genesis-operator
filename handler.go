@@ -24,11 +24,11 @@ func (t *TestHandler) Init() error {
 // ObjectCreated is called when an object is created
 func (t *TestHandler) ObjectCreated(obj interface{}) {
 	log.Info("TestHandler.ObjectCreated")
-	log.Info("[genesis-log] Creating an instance of Genesis MyResource")
+	log.Info("[genesis-log] Creating an instance of Genesis AppStack")
 	log.Info("[genesis-log] Creating genesis::aws::vpc")
 	log.Info("[genesis-log] Creating genesis::aws::securitygroup")
 	log.Info("[genesis-log] Creating genesis::aws::autoscalinggroup")
-	log.Info("[genesis-log] Created instance of Genesis MyResource")
+	log.Info("[genesis-log] Created instance of Genesis AppStack")
 }
 
 // ObjectDeleted is called when an object is deleted

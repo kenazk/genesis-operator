@@ -13,7 +13,10 @@ var SchemeGroupVersion = schema.GroupVersion{
 	Version: "v1",
 }
 
-var AddToScheme = runtime.NewSchemeBuilder(addKnownTypes).AddToScheme
+var (
+	SchemeBuilder = runtime.NewSchemeBuilder(addKnownTypes)
+	AddToScheme = SchemeBuilder.AddToScheme
+)
 
 func Resource(resource string) schema.GroupResource {
 	return SchemeGroupVersion.WithResource(resource).GroupResource()
