@@ -2,6 +2,7 @@ package main
 
 import (
 	log "github.com/Sirupsen/logrus"
+	 _ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 )
 
 // Handler interface contains the methods that are required

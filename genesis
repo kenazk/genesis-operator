@@ -1,12 +1,43 @@
 #! /bin/sh
 
-echo "Registering workflow with Kubernetes cluster" 
-sleep 1
-echo "[INFO] Connecting to Kubernetes client ..." 
-sleep 1
-echo "[INFO] Registering resource 'AppStack' as custom resource definition" 
-kubectl apply -f ./crd/appstack.yaml
-sleep 1
-echo "[INFO] Completed!"
-echo ""
+if [ "$1" == "register" ]
+then
+    echo "Registering workflow with Kubernetes cluster" 
+    sleep 1
+    echo "[INFO] Connecting to Kubernetes client ..." 
+    sleep 1
+    echo "[INFO] Registering resource 'AppStack' as custom resource definition" 
+    # kubectl apply -f ./crd/appstack.yaml
+    sleep 1
+    echo "[INFO] Completed!"
+    echo ""
+elif [ "$1" == "apply" ]
+then 
+    echo "Applying workflow"
+    sleep 1
+    echo "[INFO] Creating an instance of Genesis AppStack"
+    sleep 1
+    echo "[INFO] Creating genesis::aws::vpc"
+    sleep 2
+    echo "[INFO] Creating genesis::aws::securitygroup"
+    sleep 1
+    echo "[INFO] Creating genesis::aws::autoscalinggroup"
+    sleep 10
+    echo "[INFO] Created instance of Genesis AppStack!"
+    sleep 1
+    echo "[INFO] Completed!"
+    echo ""
+elif [ "$1" == "destroy" ]
+then 
+    echo "Destroying resources"
+    sleep 1
+    echo "[INFO] Deleting resources vpc, securitygroup"
+    sleep 2
+    echo "[INFO] Deleting resources autoscalinggroup"
+    sleep 3
+    echo "[INFO] Completed!"
+    echo ""
 
+else
+    cat ~/temp/genesis.txt
+fi

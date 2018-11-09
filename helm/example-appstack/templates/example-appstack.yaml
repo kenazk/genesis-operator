@@ -1,0 +1,8 @@
+apiVersion: puppet.com/v1
+kind: AppStack
+metadata:
+  name: example-appstack
+spec:
+  Region: "us-west-2"
+  Environment: "prod"
+  someValue: 13
