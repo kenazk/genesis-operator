@@ -4,10 +4,12 @@ if [ "$1" == "register" ]
 then
     echo "Registering workflow with Kubernetes cluster" 
     sleep 1
+    echo "[INFO] Reading current kube config ..." 
+    sleep 1
     echo "[INFO] Connecting to Kubernetes client ..." 
     sleep 1
     echo "[INFO] Registering resource 'AppStack' as custom resource definition" 
-    # kubectl apply -f ./crd/appstack.yaml
+    kubectl apply -f ./crd/appstack.yaml
     sleep 1
     echo "[INFO] Completed!"
     echo ""
@@ -21,6 +23,7 @@ then
     sleep 2
     echo "[INFO] Creating genesis::aws::securitygroup"
     sleep 1
+    echo "[INFO] Creating genesis::aws::launchconfig"
     echo "[INFO] Creating genesis::aws::autoscalinggroup"
     sleep 10
     echo "[INFO] Created instance of Genesis AppStack!"
@@ -30,10 +33,14 @@ then
 elif [ "$1" == "destroy" ]
 then 
     echo "Destroying resources"
+    echo ""
+    echo "Are you sure you want to destroy these resources? Y/N"
+    read input
     sleep 1
+    echo ""
     echo "[INFO] Deleting resources vpc, securitygroup"
     sleep 2
-    echo "[INFO] Deleting resources autoscalinggroup"
+    echo "[INFO] Deleting resources launchconfig,autoscalinggroup"
     sleep 3
     echo "[INFO] Completed!"
     echo ""

@@ -28,6 +28,7 @@ func (t *TestHandler) ObjectCreated(obj interface{}) {
 	log.Info("[genesis-log] Creating an instance of Genesis AppStack")
 	log.Info("[genesis-log] Creating genesis::aws::vpc")
 	log.Info("[genesis-log] Creating genesis::aws::securitygroup")
+	log.Info("[genesis-log] Creating genesis::aws::launchconfig")
 	log.Info("[genesis-log] Creating genesis::aws::autoscalinggroup")
 	log.Info("[genesis-log] Created instance of Genesis AppStack")
 }
@@ -36,7 +37,7 @@ func (t *TestHandler) ObjectCreated(obj interface{}) {
 func (t *TestHandler) ObjectDeleted(obj interface{}) {
 	log.Info("TestHandler.ObjectDeleted")
 	log.Info("[genesis-log] Deleting resources vpc, securitygroup")
-	log.Info("[genesis-log] Deleting resources autoscalinggroup") 
+	log.Info("[genesis-log] Deleting resources launchconfig, autoscalinggroup") 
 }
 
 // ObjectUpdated is called when an object is updated
